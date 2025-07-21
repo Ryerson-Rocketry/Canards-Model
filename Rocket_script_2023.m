@@ -18,3 +18,5 @@ thrust = readmatrix("2023_RocketData/ThrustCurve.txt");
 % 4, sweep angle: 58, thickness: 0.118
 
 % Length of body tube 144 in
+
+%vehicle mass 36.51 kg wet 17.64 dry
