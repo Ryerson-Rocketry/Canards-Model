@@ -19,4 +19,4 @@ thrust = readmatrix("2023_RocketData/ThrustCurve.txt");
 
 % Length of body tube 144 in
 
-%vehicle mass 36.51 kg wet 17.64 dry
+%vehicle mass 36.51 kg wet 17.64 dry mmoi 14.57
