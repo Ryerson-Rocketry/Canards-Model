@@ -40,3 +40,6 @@ thrust = readmatrix("2023_RocketData/ThrustCurve2026.txt");
 %   Wet mass: 26.452kg
 %   MMOI: (based on cylindrical approx) [X,Y]: 6.531914, [Z]: 0.635615
 %   Impulse 7680 N-sec
+
+
+
