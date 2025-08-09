@@ -43,3 +43,4 @@ thrust = readmatrix("2023_RocketData/ThrustCurve2026.txt");
 
 
 
+u = (0.152/3)*((0.318+2*0.122)/(0.318+0.122))
