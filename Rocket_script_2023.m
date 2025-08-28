@@ -2,8 +2,8 @@ roll = readmatrix("2023_RocketData/GyroRollRate_TeleMega_2024.txt");
 pitch = readmatrix("2023_RocketData/GyroPitchRate_TeleMega_2024.txt");
 yaw = readmatrix("2023_RocketData/GyroYawRate_TeleMega_2024.txt");
 
-%thrust = readmatrix("2023_RocketData/ThrustCurve.txt");
-thrust = readmatrix("2023_RocketData/ThrustCurve2026.txt");
+thrust = readmatrix("2023_RocketData/ThrustCurve.txt");
+%thrust = readmatrix("2023_RocketData/ThrustCurve2026.txt");
 
 
 
@@ -43,4 +43,8 @@ thrust = readmatrix("2023_RocketData/ThrustCurve2026.txt");
 
 
 
-u = (0.152/3)*((0.318+2*0.122)/(0.318+0.122))
+% u = (0.08128/3)*((0.2032+2*0.1016)/(0.2032+0.1016))
+% u2 = (0.0889/3)*((0.127+2*0.0508)/(0.127+0.0508))
+
+kt = 1+((0.1016)/(0.08128+0.1016))
+kt1 = 1+((0.0508)/(0.0889+0.0508))
