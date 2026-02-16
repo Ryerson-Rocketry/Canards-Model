@@ -9,6 +9,7 @@ function [C_normal_alpha_1] = aerosurface_calc(mach, incidence, aspect_ratio, mi
     beta = sqrt(abs(1-mach^2));
 
     if mach <= subsonic
+       
         C_normal_alpha_1 = (2*pi *aspect_ratio)/ (1+sqrt(1+(beta*aspect_ratio / cos(midchord_angle))^2));
 
     elseif mach > supersonic
