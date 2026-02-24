@@ -3,17 +3,38 @@
 %Variables are the span and chord, change these the know how fast in
 %seconds the canards would be able to null that rotation
 clear; clc; close all;
+% %% Past roll rate data
+% 
+% % Read space-separated numeric file
+% data = readmatrix('/Users/ranvirsingh/Documents/Ryerson University/MetRocketry/CanardsModel/2023_RocketData/GyroRollRate_TeleMega_2024.txt');
+% 
+% % Assign columns to variables
+% timeRoll = data(:,1);
+% RollRate = data(:,2);
+
+
 %% Constants
 I = 0.06324;
 
+gen = 27;
 
-span = 15/1000;              % m 
-chord = (29.44/2)/1000;      % m  
+Lambda = deg2rad(90-gen);        % sweep angle in radians (quarter-chord sweep if using Eq.6)
+sweep = 90-(90-gen);
+
+cosLam = cos(Lambda);
+
+
+
+
+span = 25/1000;              % m
+side = span/tand(sweep);
+chord = (side/2);      % m  
 
 
 dCent = 0.0655+(span/3);
-alpha = deg2rad(30);          % AoA in radians
-wt = 2*pi*6;
+
+alpha = deg2rad(20);          % AoA in radians
+wt = 2*pi*2;
 
 % Planform area (now expressed via span & chord)
 S = span * chord;            % = 0.5*cr*span
@@ -21,8 +42,6 @@ S = span * chord;            % = 0.5*cr*span
 % Aspect ratio (general definition)
 AR = span^2 / S;             % = span/chord = 2*span/cr for delta
 
-Lambda = deg2rad(67);        % sweep angle in radians (quarter-chord sweep if using Eq.6)
-cosLam = cos(Lambda);
 
 R = 287.05;
 
@@ -72,10 +91,13 @@ ylabel('Lift (N)');
 hold on
 grid on;
 xline(25.795)
+xline(6.121)
 xline(7.937);
 plot(time, angVel);
 xlim([0 28])
-legend('Lift', 'Ang Vel')
+ylim([0 16])
+plot(time, time_to_target);
+legend('Lift', 'Ang Vel', 'Time to target')
 
 
 
