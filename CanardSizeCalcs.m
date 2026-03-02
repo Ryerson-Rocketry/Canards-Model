@@ -16,7 +16,7 @@ clear; clc; close all;
 %% Constants
 I = 0.06324;
 
-gen = 27;
+gen = 29.5;
 
 Lambda = deg2rad(90-gen);        % sweep angle in radians (quarter-chord sweep if using Eq.6)
 sweep = 90-(90-gen);
