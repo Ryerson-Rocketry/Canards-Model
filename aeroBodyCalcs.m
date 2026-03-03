@@ -5,7 +5,7 @@ function [Cn, Cp] = aeroBodyCalcs(mach, alpha, area_bot, area_aft, area_planform
 
     % Need to add limits
     %Open rocket method for calculating the coeff of normal force
-    Cn = ((2 * (area_aft - area_bot) * sin(alpha))/(Aref*alpha)) + body_lift; 
+    Cn = ((2 * (area_bot-area_aft) * sin(alpha))/(Aref*alpha)) + body_lift; 
    
     %open rocket method for calculating the moment coeff prob not needed
     %C_m_1 = 2 * (length * area_aft - volume) * sin(alpha); waterloo

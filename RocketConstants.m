@@ -45,7 +45,10 @@ SF_TC = 0.122;
 SF_SL = 0.196;
 SF_SA = 1.01; %Rads
 SF_H = 0.122;
+
 SF_tct = 0.686/100;
+
+SF_aFin = 0.01844427;
 
 SF_CG = 253.464/100;
 
@@ -56,7 +59,7 @@ SF_CP_ts = 248.258/100; %Find better number
 SF_CP_sup = 252/100; %Find better number
 
 
-SF_mC = atan((SF_SA+(SF_TC-SF_RC)/2)/SF_H); % Eq from chatgpt verify!
+SF_mC = atan2((SF_SA+(SF_TC-SF_RC)/2),SF_H); % Eq from chatgpt verify!
 
 SF_plan = ((SF_TC+SF_RC)/2)*SF_H;
 

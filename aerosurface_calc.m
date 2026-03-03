@@ -10,10 +10,13 @@ function [C_normal_alpha_1] = aerosurface_calc(mach, incidence, aspect_ratio, mi
     % prandtl factor
     % beta = max(sqrt(abs(1-mach^2)), 0.4);
     beta = sqrt(abs(1-mach^2));
+    aFin= 0.018444;
+    span = 0.122;
+    aRef = 0.014;
 
     if mach <= subsonic % subsonic
-        C_normal_alpha_1 = (2 * pi * aspect_ratio ) /(2 + sqrt(abs( 4 + ( beta * aspect_ratio / cos(midchord_angle) )^2 )) );
-
+        C_normal_alpha_1 = (2 * pi * ((idk^2)/aRef) ) /(1 + sqrt(( 1 + ( (beta * (idk^2)) /( aFin * cos(midchord_angle)) )^2 )));
+        CNa1 = (2*pi*span^2/Aref) / (1 + sqrt(1 + ( (sqrt(1 - mach^2)*span^2) / (Afin*cos(Gamma_c)) )^2 ));
     elseif mach > supersonic % supersonic
         K_n = [((gamma+1)*mach^8+(2*gamma^2-7*gamma-5)*mach^6+10*(gamma+1)*mach^4+8)/(6*beta^7); 
              ((gamma+1)*mach^4-4*beta^2)/(4*beta^4);  
