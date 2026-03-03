@@ -2,7 +2,7 @@
 
 dRef = 0.131; %meters
 aRef = 0.014; %m^2
-
+rT = dRef/2;
 
 rocketLength = 2.68; % Meters
 
@@ -39,7 +39,7 @@ NC_CG = 59.693/100;
 
 
 %% Static fins
-
+NFins = 4;
 SF_RC = 0.318;
 SF_TC = 0.122;
 SF_SL = 0.196;
@@ -61,6 +61,8 @@ SF_mC = atan((SF_SA+(SF_TC-SF_RC)/2)/SF_H); % Eq from chatgpt verify!
 SF_plan = ((SF_TC+SF_RC)/2)*SF_H;
 
 SF_AR = (SF_H^2)/SF_plan;
+
+yMac = (SF_H/3)*((SF_RC+(2*SF_TC))/(SF_RC+SF_TC));
 
 %% Canards
 
